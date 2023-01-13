@@ -6,8 +6,9 @@
 
 body {
   font-family: 'Inter Tight', sans-serif;
+  background-color:#E6EDF0; 
+  /* background-image: linear-gradient(315deg, #032f46 50%, #e6edf0 80%); */
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -17,4 +18,60 @@ body {
 
 h1,h2,h3,h4,h5{
   font-family: 'Oswald', sans-serif;
+}
+
+
+.quiz-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+  width: 600px;
+  overflow:hidden;
+  color: #032f46;
+}
+
+.quiz-header {
+  padding: 4rem;
+}
+
+h2 {
+  padding: 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+ul li label {
+  cursor: pointer;
+}
+
+button {
+  background-color: #032f46;
+  color: #E6EDF0; 
+  display: block;
+  border: none;
+  width: 100%;
+  font-family: inherit;
+  font-size: 1.1rem;
+  padding: 1.3rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color:#1C4459;
+}
+
+button:focus{
+  outline: none;
+  background-color: #5B7887;
 }
