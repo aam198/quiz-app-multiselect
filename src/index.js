@@ -18,7 +18,7 @@ const quizData = [
   {
     question: "What does HTML stand for?",
     a: "Hypertext Markup Language",
-    b: "Hypertext markdown Language",
+    b: "Hypertext Markdown Language",
     c: "Hyperloop Machine Language",
     d: "Helicopters Terminals Motorboats Lamborginis",
     correct: "a",
@@ -65,3 +65,43 @@ function deselectAnswers() {
   answerEls.forEach(answerEl => answerEl.checked = false)
 }
 
+function getSelected() {
+  // Initialize answer
+  let answer;
+  // Iterate through each answerEls elements
+  answerEls.forEach(answerEl => {
+    if(answerEl.checked){
+      answer = answerEl.id
+    }
+  })
+  // which will return answer_id
+  return answer;
+
+}
+
+submitBtn.addEventListener('click', () => {
+  // Get the answer that the user has selected
+  const answer = getSelected();
+
+  // Testing of which answer has been selected
+  console.log(answer)
+  // Then get the correct answer 
+  if (answer){
+    if(answer === quizData[currentQuiz].correct){
+      // Increment the score
+      score++;
+    }
+    // Increments the 'currentQuiz' position
+    currentQuiz++
+
+    if(currentQuiz < quizData.length){
+      loadQuiz()
+    }
+    else {
+      quiz.innerHTML = `
+        <h2> You answered correctly at ${score}  / ${quizData.length} questions</h2>
+        
+        <button onclick="location.reload()">Reload</button>`
+    }
+  }
+})
