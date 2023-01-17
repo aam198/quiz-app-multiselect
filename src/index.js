@@ -64,3 +64,4 @@ function deselectAnswers() {
   // Makes sure that any answer selected is deselected when the quiz loads. 
   answerEls.forEach(answerEl => answerEl.checked = false)
 }
+
