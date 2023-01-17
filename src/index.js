@@ -48,10 +48,19 @@ let score = 0
 loadQuiz()
 
 function loadQuiz() {
+  // Deselect everything
+  deselectAnswers();
   //  Get current quiz data
   const currentQuizData = quizData[currentQuiz]
-  // The value of question within the array of quizData
+  // The value of question within the object of quizData
   questionEl.innerText = currentQuizData.question;
+  a_text.innerText = currentQuizData.a;
+  b_text.innerText = currentQuizData.b;
+  c_text.innerText = currentQuizData.c;
+  d_text.innerText = currentQuizData.d;
 }
 
-submit
+function deselectAnswers() {
+  // Makes sure that any answer selected is deselected when the quiz loads. 
+  answerEls.forEach(answerEl => answerEl.checked = false)
+}
