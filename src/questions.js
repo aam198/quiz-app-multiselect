@@ -10,6 +10,15 @@ const questions = [
   // more questions here
 ];
 
+const answerEls = document.querySelectorAll('.answer');
+
+deselectAnswers();
+
+function deselectAnswers() {
+  // Makes sure that any answer selected is deselected when the quiz loads. 
+  answerEls.forEach(answerEl => answerEl.checked = false)
+}
+
 const form = document.querySelector("form");
 form.addEventListener("submit", function(event) {
   event.preventDefault();
@@ -17,7 +26,7 @@ form.addEventListener("submit", function(event) {
 
   for (let i = 0; i < questions.length; i++) {
     const question = questions[i];
-    const selectedOptions = form[i].selectedOptions;
+    const selectedOptions = form[i].checked;
     let userAnswers = [];
     for (let j = 0; j < selectedOptions.length; j++) {
       userAnswers.push(selectedOptions[j].value);

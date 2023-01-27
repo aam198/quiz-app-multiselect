@@ -9,7 +9,7 @@
 </head>
 <body>
   <!-- Placeholder for question -->
-  <div class="quiz-container" id="quiz">
+  <!-- <div class="quiz-container" id="quiz">
     <div class="quiz-header">
       <h2 id="question">Question Text</h2>
       <ul>
@@ -32,11 +32,40 @@
       </ul>
     </div>
     <button id="submit">Check!</button>
-  </div>
+  </div> -->
+
+  <form>
+    <div>
+      <label for="question1">What are the colors of the rainbow?</label>
+      <input type="checkbox" class="answer" name="question1" value="red">red</option>
+      <input type="checkbox" class="answer" name="question1" value="orange">orange</option>
+      <input type="checkbox" class="answer" name="question1" value="yellow">yellow</option>
+      <input type="checkbox" class="answer" name="question1" value="green">green</option>
+      <input type="checkbox" class="answer" name="question1" value="blue">blue</option>
+      <input type="checkbox" class="answer" name="question1" value="indigo">indigo</option>
+      <input type="checkbox" class="answer" name="question1" value="violet">violet</option>
+      </select>
+    </div>
+    <div>
+      <label for="question2">What are the Great Lakes of North America?</label>
+      <select id="question2" name="question2" multiple>
+        <option value="Superior">Superior</option>
+        <option value="Michigan">Michigan</option>
+        <option value="Huron">Huron</option>
+        <option value="Erie">Erie</option>
+        <option value="Ontario">Ontario</option>
+      </select>
+    </div>
+    <!-- more questions here -->
+    <div>
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+  
 <div class="extra-container">
   <a href="./multi-select.html">Go to => Quiz Example</a>
 </div>
-  <script src="./src/index.js"></script>
+  <script src="./src/questions.js"></script>
   
 </body>
 </html>
