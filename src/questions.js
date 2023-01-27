@@ -24,14 +24,22 @@ form.addEventListener("submit", function(event) {
   event.preventDefault();
   let correctAnswers = 0;
 
+  const checkboxes = document.getElementsByName('question1');
+  console.log(checkboxes.length);
+
   for (let i = 0; i < questions.length; i++) {
     const question = questions[i];
-    const selectedOptions = form[i].checked;
+    // const selectedOptions = form[i].checked;
+    console.log(checkboxes[i].value);
+    const selectedOptions = checkboxes[i].checked;
+    
     let userAnswers = [];
     for (let j = 0; j < selectedOptions.length; j++) {
+      console.log(selectedOptions[j].value);
       userAnswers.push(selectedOptions[j].value);
     }
     if (JSON.stringify(userAnswers.sort()) === JSON.stringify(question.answers.sort())) {
+      console.log(question.answers);
       correctAnswers++;
     }
   }
