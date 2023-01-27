@@ -13,7 +13,7 @@ const quizData = [
     b: "Cascading Style Sheets",
     c: "Cascading Simple Sheets",
     d: "Cars Suvs Sailboats",
-    correct: "b",
+    correct: "b, c",
   },
   {
     question: "What does HTML stand for?",
@@ -95,11 +95,11 @@ submitBtn.addEventListener('click', () => {
     currentQuiz++
 
     if(currentQuiz < quizData.length){
-      loadQuiz()
+      loadQuiz();
     }
     else {
       quiz.innerHTML = `
-        <h2> You answered ${score}  / ${quizData.length} questions correctly</h2>
+        <h2> Feedback: You answered ${score}  / ${quizData.length} questions correctly</h2>
         
         <button onclick="location.reload()">Reload Quiz</button>`
     }
