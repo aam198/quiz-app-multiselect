@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multi-Select Checkbox Quiz</title>
+    <script>
+      function checkAnswers() {
+        // Get the answers from the checkboxes
+        var answer1 = document.getElementById("q1a1").checked;
+        var answer2 = document.getElementById("q1a2").checked;
+        var answer3 = document.getElementById("q1a3").checked;
+        var answer4 = document.getElementById("q2a1").checked;
+        var answer5 = document.getElementById("q2a2").checked;
+        var answer6 = document.getElementById("q2a3").checked;
+
+        // Check if all answers are correct
+        if (answer1 && answer3 && answer4 && answer6 && !answer2 && !answer5) {
+          alert("All answers are correct!");
+        } else {
+          alert("Some answers are incorrect.");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Multi-Select Checkbox Quiz</h1>
+    <p>Question 1: Which of the following are fruits?</p>
+    <input type="checkbox" id="q1a1" name="q1a1" value="apple" />Apple<br />
+    <input type="checkbox" id="q1a2" name="q1a2" value="carrot" />Carrot<br />
+    <input type="checkbox" id="q1a3" name="q1a3" value="orange" />Orange<br />
+
+    <p>Question 2: Which of the following are colors?</p>
+    <input type="checkbox" id="q2a1" name="q2a1" value="red" />Red<br />
+    <input type="checkbox" id="q2a2" name="q2a2" value="sound" />Sound<br />
+    <input type="checkbox" id="q2a3" name="q2a3" value="green" />Green<br />
+
+    <button onclick="checkAnswers()">Submit</button>
+  </body>
+</html>
